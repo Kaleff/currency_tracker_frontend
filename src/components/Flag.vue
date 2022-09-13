@@ -9,7 +9,7 @@ export default {
     },
     computed: {
         flagClass() {
-            return 'fi fi-'+this.acronym.slice(0, -1).toLowerCase()
+            return 'fi fi-' + this.acronym.slice(0, -1).toLowerCase()
         }
     }
 }

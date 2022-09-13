@@ -3,7 +3,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/rates">Rates</router-link>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>
@@ -29,11 +29,14 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 
-table, td, th {
+table,
+td,
+th {
   border: 1px solid;
 }
 
-th, td {
+th,
+td {
   padding: 7.5px;
 }
 
