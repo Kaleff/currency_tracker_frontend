@@ -42,4 +42,21 @@ table {
   border-collapse: collapse;
   text-align: center;
 }
+
+.rateColumn {
+  background-color: #d9d9d9;
+}
+
+.rateHeading {
+  cursor: pointer;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 </style>

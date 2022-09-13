@@ -1,22 +1,35 @@
 <template>
     <tr>
         <td>{{ rowKey+1 }}</td>
-        <td>{{ Currencies[rowInfo[0]] }} ({{rowInfo[0]}})</td>
-        <td>{{ rowInfo[1] }}</td>
-        <td>{{ (1/rowInfo[1]).toFixed(5) }}</td>
+        <td class="rateColumn"><Flag :acronym="acronym"/> {{ Currencies[acronym] }} ({{acronym}})</td>
+        <td class="rateColumn"><Flag acronym="EUR"/> EUR = {{ rate }} {{ acronym }} <Flag :acronym="acronym"/></td>
+        <td class="rateColumn"><Flag :acronym="acronym"/> 1 {{ acronym }} = {{ (1/rate).toFixed(5) }} EUR <Flag acronym="EUR"/></td>
     </tr>
 </template>
 <script>
 import { CURRENCYNAMES } from '@/constants.js'
+import Flag from '@/components/Flag.vue'
+
 export default {
     name: 'RateRow',
     props: {
         rowKey: Number,
-        rowInfo: Array
+        rowInfo: Object
+    },
+    components: {
+        Flag
     },
     data() {
         return {
             Currencies: CURRENCYNAMES
+        }
+    },
+    computed: {
+        acronym() {
+            return this.rowInfo['name']
+        },
+        rate() {
+            return this.rowInfo['rate']
         }
     }
 }
